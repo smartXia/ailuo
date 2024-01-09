@@ -55,4 +55,9 @@ export default {
   'grade-level': () => import('@/view/apitable/sysUserGrade/index.vue'),
   'pay-manage-order': () => import('@/view/order/omsOrder/index.vue'),
   'pay-manage-order-return': () => import('@/view/order/omsOrderReturnApply/index.vue'),
+  //审批流程
+  'sale-process': () => import('@/view/projectSaleProcess/index.vue'),
+  'technical-process': () => import('@/view/projectTechnicalProcess/index.vue'),
+  'pay-type': () => import('@/view/projectPayType/index.vue'),
+  'trade-mode': () => import('@/view/projectTradeMode/index.vue'),
 }

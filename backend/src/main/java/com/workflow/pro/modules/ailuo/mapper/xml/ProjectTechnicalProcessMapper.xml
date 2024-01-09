@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workflow.pro.modules.ailuo.mapper.ProjectTechnicalProcessMapper">
+
+    <resultMap type="ProjectTechnicalProcess" id="ProjectTechnicalProcessResult">
+                    <result property="id" column="id"/>
+                    <result property="name" column="name"/>
+                    <result property="result" column="result"/>
+                    <result property="selectionAnalysis" column="selection_analysis"/>
+                    <result property="productionAnalysis" column="production_analysis"/>
+                    <result property="attach" column="attach"/>
+                    <result property="commitMsg" column="commit_msg"/>
+                    <result property="linkSale" column="link_sale"/>
+                    <result property="deleted" column="deleted"/>
+                    <result property="createBy" column="create_by"/>
+                    <result property="updateBy" column="update_by"/>
+                    <result property="createTime" column="create_time"/>
+                    <result property="updateTime" column="update_time"/>
+                    <result property="remark" column="remark"/>
+                    </resultMap>
+    
+    <sql id="selectProjectTechnicalProcessVo">
+        select`id`,`name`,`result`,`selection_analysis`,`production_analysis`,`attach`,`commit_msg`,`link_sale`,`deleted`,`create_by`,`update_by`,`create_time`,`update_time`,`remark`        from `project_technical_process`
+    </sql>
+
+    <select id="selectProjectTechnicalProcessList" parameterType="ProjectTechnicalProcess" resultMap="ProjectTechnicalProcessResult">
+        <include refid="selectProjectTechnicalProcessVo"/>
+        <where>
+                                                                                                    <if test="request.name != null  and request.name != ''">and
+                            `name` like concat('%', #{request.name}, '%')
+                        </if>
+                                                                                                            <if test="request.result != null  and request.result != ''">and
+                            `result` = #{request.result}
+                        </if>
+                                                                                                            <if test="request.selectionAnalysis != null  and request.selectionAnalysis != ''">and
+                            `selection_analysis` = #{request.selectionAnalysis}
+                        </if>
+                                                                                                            <if test="request.productionAnalysis != null  and request.productionAnalysis != ''">and
+                            `production_analysis` = #{request.productionAnalysis}
+                        </if>
+                                                                                                            <if test="request.attach != null  and request.attach != ''">and
+                            `attach` = #{request.attach}
+                        </if>
+                                                                                                            <if test="request.commitMsg != null  and request.commitMsg != ''">and
+                            `commit_msg` = #{request.commitMsg}
+                        </if>
+                                                                                                            <if test="request.linkSale != null  and request.linkSale != ''">and
+                            `link_sale` = #{request.linkSale}
+                        </if>
+                                                                                                            <if test="request.deleted != null ">and
+                            `deleted` = #{request.deleted}
+                        </if>
+                                                                                                                                                                                                    </where>
+                 order by   create_time desc
+            </select>
+
+    <select id="selectProjectTechnicalProcessById" parameterType="Long"
+            resultMap="ProjectTechnicalProcessResult">
+                    <include refid="selectProjectTechnicalProcessVo"/>
+            where `id` = #{id}
+            </select>
+
+    <insert id="insertProjectTechnicalProcess" parameterType="ProjectTechnicalProcess" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into `project_technical_process`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                                                                            <if test="name != null and name != ''">`name`,
+                    </if>
+                                                                <if test="result != null and result != ''">`result`,
+                    </if>
+                                                                <if test="selectionAnalysis != null and selectionAnalysis != ''">`selection_analysis`,
+                    </if>
+                                                                <if test="productionAnalysis != null and productionAnalysis != ''">`production_analysis`,
+                    </if>
+                                                                <if test="attach != null and attach != ''">`attach`,
+                    </if>
+                                                                <if test="commitMsg != null and commitMsg != ''">`commit_msg`,
+                    </if>
+                                                                <if test="linkSale != null and linkSale != ''">`link_sale`,
+                    </if>
+                                                                <if test="deleted != null">`deleted`,
+                    </if>
+                                                                <if test="createBy != null">`create_by`,
+                    </if>
+                                                                <if test="updateBy != null">`update_by`,
+                    </if>
+                                                                <if test="createTime != null">`create_time`,
+                    </if>
+                                                                <if test="updateTime != null">`update_time`,
+                    </if>
+                                                                <if test="remark != null">`remark`,
+                    </if>
+                                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                                                                            <if test="name != null and name != ''">#{name},
+                    </if>
+                                                                <if test="result != null and result != ''">#{result},
+                    </if>
+                                                                <if test="selectionAnalysis != null and selectionAnalysis != ''">#{selectionAnalysis},
+                    </if>
+                                                                <if test="productionAnalysis != null and productionAnalysis != ''">#{productionAnalysis},
+                    </if>
+                                                                <if test="attach != null and attach != ''">#{attach},
+                    </if>
+                                                                <if test="commitMsg != null and commitMsg != ''">#{commitMsg},
+                    </if>
+                                                                <if test="linkSale != null and linkSale != ''">#{linkSale},
+                    </if>
+                                                                <if test="deleted != null">#{deleted},
+                    </if>
+                                                                <if test="createBy != null">#{createBy},
+                    </if>
+                                                                <if test="updateBy != null">#{updateBy},
+                    </if>
+                                                                <if test="createTime != null">#{createTime},
+                    </if>
+                                                                <if test="updateTime != null">#{updateTime},
+                    </if>
+                                                                <if test="remark != null">#{remark},
+                    </if>
+                                    </trim>
+    </insert>
+
+    <update id="updateProjectTechnicalProcess" parameterType="ProjectTechnicalProcess">
+        update `project_technical_process`
+        <trim prefix="SET" suffixOverrides=",">
+                                                                            <if test="name != null and name != ''">`name` =
+                        #{name},
+                    </if>
+                                                                <if test="result != null and result != ''">`result` =
+                        #{result},
+                    </if>
+                                                                <if test="selectionAnalysis != null and selectionAnalysis != ''">`selection_analysis` =
+                        #{selectionAnalysis},
+                    </if>
+                                                                <if test="productionAnalysis != null and productionAnalysis != ''">`production_analysis` =
+                        #{productionAnalysis},
+                    </if>
+                                                                <if test="attach != null and attach != ''">`attach` =
+                        #{attach},
+                    </if>
+                                                                <if test="commitMsg != null and commitMsg != ''">`commit_msg` =
+                        #{commitMsg},
+                    </if>
+                                                                <if test="linkSale != null and linkSale != ''">`link_sale` =
+                        #{linkSale},
+                    </if>
+                                                                <if test="deleted != null">`deleted` =
+                        #{deleted},
+                    </if>
+                                                                <if test="createBy != null">`create_by` =
+                        #{createBy},
+                    </if>
+                                                                <if test="updateBy != null">`update_by` =
+                        #{updateBy},
+                    </if>
+                                                                <if test="createTime != null">`create_time` =
+                        #{createTime},
+                    </if>
+                                                                <if test="updateTime != null">`update_time` =
+                        #{updateTime},
+                    </if>
+                                                                <if test="remark != null">`remark` =
+                        #{remark},
+                    </if>
+                                    </trim>
+        where `id` = #{id}
+    </update>
+
+    <delete id="deleteProjectTechnicalProcessById" parameterType="Long">
+        delete
+        from `project_technical_process`
+        where `id` = #{id}
+    </delete>
+
+    <delete id="deleteProjectTechnicalProcessByIds" parameterType="String">
+        delete from `project_technical_process` where `id` in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

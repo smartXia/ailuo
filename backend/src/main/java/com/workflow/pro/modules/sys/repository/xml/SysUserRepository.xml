@@ -5,12 +5,10 @@
     <select id="selectUser" parameterType="SysUserRequest" resultType="SysUser">
         select *,
         sp.name as postName,
-        sd.name as deptName,
-        gd.name as gradeName
+        sd.name as deptName
         from sys_user su
         left join sys_post sp on sp.id = su.post_id
         left join sys_dept sd on sd.id = su.dept_id
-        left join sys_user_grade gd on gd.id = su.grade_id
         <where>
             <if test="request.username!=null and request.username!=''">
                 and su.username like concat('%', #{request.username}, '%')
@@ -18,10 +16,10 @@
             <if test="request.nickname!=null and request.nickname!=''">
                 and su.nickname like concat('%', #{request.nickname}, '%')
             </if>
-            <if test="request.gradeId!=null and request.gradeId!=''">
-                and su.grade_id = #{request.gradeId}
-            </if>
 
+            <if test="request.dept_id!=null and request.dept_id!=''">
+                and su.dept_id = #{request.dept_id}
+            </if>
             <if test="request.phone!=null and request.phone!=''">
                 and su.phone = #{request.phone}
             </if>

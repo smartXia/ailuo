@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workflow.pro.modules.ailuo.mapper.ProjectTradeModeMapper">
+
+    <resultMap type="ProjectTradeMode" id="ProjectTradeModeResult">
+                    <result property="id" column="id"/>
+                    <result property="name" column="name"/>
+                    <result property="type" column="type"/>
+                    <result property="deleted" column="deleted"/>
+                    <result property="createBy" column="create_by"/>
+                    <result property="updateBy" column="update_by"/>
+                    <result property="createTime" column="create_time"/>
+                    <result property="updateTime" column="update_time"/>
+                    <result property="remark" column="remark"/>
+                    </resultMap>
+    
+    <sql id="selectProjectTradeModeVo">
+        select`id`,`name`,`type`,`deleted`,`create_by`,`update_by`,`create_time`,`update_time`,`remark`        from `project_trade_mode`
+    </sql>
+
+    <select id="selectProjectTradeModeList" parameterType="ProjectTradeMode" resultMap="ProjectTradeModeResult">
+        <include refid="selectProjectTradeModeVo"/>
+        <where>
+                                                                                                    <if test="request.name != null  and request.name != ''">and
+                            `name` like concat('%', #{request.name}, '%')
+                        </if>
+                                                                                                            <if test="request.type != null  and request.type != ''">and
+                            `type` = #{request.type}
+                        </if>
+                                                                                                            <if test="request.deleted != null ">and
+                            `deleted` = #{request.deleted}
+                        </if>
+                                                                                                                                                                                                    </where>
+                 order by   create_time desc
+            </select>
+
+    <select id="selectProjectTradeModeById" parameterType="Long"
+            resultMap="ProjectTradeModeResult">
+                    <include refid="selectProjectTradeModeVo"/>
+            where `id` = #{id}
+            </select>
+
+    <insert id="insertProjectTradeMode" parameterType="ProjectTradeMode" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into `project_trade_mode`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                                                                            <if test="name != null and name != ''">`name`,
+                    </if>
+                                                                <if test="type != null and type != ''">`type`,
+                    </if>
+                                                                <if test="deleted != null">`deleted`,
+                    </if>
+                                                                <if test="createBy != null">`create_by`,
+                    </if>
+                                                                <if test="updateBy != null">`update_by`,
+                    </if>
+                                                                <if test="createTime != null">`create_time`,
+                    </if>
+                                                                <if test="updateTime != null">`update_time`,
+                    </if>
+                                                                <if test="remark != null">`remark`,
+                    </if>
+                                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                                                                            <if test="name != null and name != ''">#{name},
+                    </if>
+                                                                <if test="type != null and type != ''">#{type},
+                    </if>
+                                                                <if test="deleted != null">#{deleted},
+                    </if>
+                                                                <if test="createBy != null">#{createBy},
+                    </if>
+                                                                <if test="updateBy != null">#{updateBy},
+                    </if>
+                                                                <if test="createTime != null">#{createTime},
+                    </if>
+                                                                <if test="updateTime != null">#{updateTime},
+                    </if>
+                                                                <if test="remark != null">#{remark},
+                    </if>
+                                    </trim>
+    </insert>
+
+    <update id="updateProjectTradeMode" parameterType="ProjectTradeMode">
+        update `project_trade_mode`
+        <trim prefix="SET" suffixOverrides=",">
+                                                                            <if test="name != null and name != ''">`name` =
+                        #{name},
+                    </if>
+                                                                <if test="type != null and type != ''">`type` =
+                        #{type},
+                    </if>
+                                                                <if test="deleted != null">`deleted` =
+                        #{deleted},
+                    </if>
+                                                                <if test="createBy != null">`create_by` =
+                        #{createBy},
+                    </if>
+                                                                <if test="updateBy != null">`update_by` =
+                        #{updateBy},
+                    </if>
+                                                                <if test="createTime != null">`create_time` =
+                        #{createTime},
+                    </if>
+                                                                <if test="updateTime != null">`update_time` =
+                        #{updateTime},
+                    </if>
+                                                                <if test="remark != null">`remark` =
+                        #{remark},
+                    </if>
+                                    </trim>
+        where `id` = #{id}
+    </update>
+
+    <delete id="deleteProjectTradeModeById" parameterType="Long">
+        delete
+        from `project_trade_mode`
+        where `id` = #{id}
+    </delete>
+
+    <delete id="deleteProjectTradeModeByIds" parameterType="String">
+        delete from `project_trade_mode` where `id` in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

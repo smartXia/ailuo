@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workflow.pro.modules.ailuo.mapper.ProjectSaleProcessMapper">
+
+    <resultMap type="ProjectSaleProcess" id="ProjectSaleProcessResult">
+                    <result property="id" column="id"/>
+                    <result property="name" column="name"/>
+                    <result property="phone" column="phone"/>
+                    <result property="type" column="type"/>
+                    <result property="desc" column="desc"/>
+                    <result property="company" column="company"/>
+                    <result property="status" column="status"/>
+                    <result property="img" column="img"/>
+                    <result property="salesManager" column="sales_manager"/>
+                    <result property="valveDetail" column="valve_detail"/>
+                    <result property="specificationDetail" column="specification_detail"/>
+                    <result property="otherFile" column="other_file"/>
+                    <result property="torqueThrust" column="torque_thrust"/>
+                    <result property="otherTechnicalRequirements" column="other_technical_requirements"/>
+                    <result property="mechanismForm" column="mechanism_form"/>
+                    <result property="typeSelection" column="type_selection"/>
+                    <result property="currency" column="currency"/>
+                    <result property="quotationBegin" column="quotation_begin"/>
+                    <result property="quotationEnd" column="quotation_end"/>
+                    <result property="qualityTime" column="quality_time"/>
+                    <result property="exportItem" column="export_item"/>
+                    <result property="modeTrade" column="mode_trade"/>
+                    <result property="relationReview" column="relation_review"/>
+                    <result property="relationSale" column="relation_sale"/>
+                    <result property="payType" column="pay_type"/>
+                    <result property="deleted" column="deleted"/>
+                    <result property="createBy" column="create_by"/>
+                    <result property="updateBy" column="update_by"/>
+                    <result property="createTime" column="create_time"/>
+                    <result property="updateTime" column="update_time"/>
+                    <result property="remark" column="remark"/>
+                    </resultMap>
+    
+    <sql id="selectProjectSaleProcessVo">
+        select`id`,`name`,`phone`,`type`,`desc`,`company`,`status`,`img`,`sales_manager`,`valve_detail`,`specification_detail`,`other_file`,`torque_thrust`,`other_technical_requirements`,`mechanism_form`,`type_selection`,`currency`,`quotation_begin`,`quotation_end`,`quality_time`,`export_item`,`mode_trade`,`relation_review`,`relation_sale`,`pay_type`,`deleted`,`create_by`,`update_by`,`create_time`,`update_time`,`remark`        from `project_sale_process`
+    </sql>
+
+    <select id="selectProjectSaleProcessList" parameterType="ProjectSaleProcess" resultMap="ProjectSaleProcessResult">
+        <include refid="selectProjectSaleProcessVo"/>
+        <where>
+                                                                                                    <if test="request.name != null  and request.name != ''">and
+                            `name` like concat('%', #{request.name}, '%')
+                        </if>
+                                                                                                            <if test="request.phone != null  and request.phone != ''">and
+                            `phone` = #{request.phone}
+                        </if>
+                                                                                                            <if test="request.type != null  and request.type != ''">and
+                            `type` = #{request.type}
+                        </if>
+                                                                                                            <if test="request.desc != null  and request.desc != ''">and
+                            `desc` = #{request.desc}
+                        </if>
+                                                                                                            <if test="request.company != null  and request.company != ''">and
+                            `company` = #{request.company}
+                        </if>
+                                                                                                            <if test="request.status != null ">and
+                            `status` = #{request.status}
+                        </if>
+                                                                                                            <if test="request.img != null  and request.img != ''">and
+                            `img` = #{request.img}
+                        </if>
+                                                                                                            <if test="request.salesManager != null  and request.salesManager != ''">and
+                            `sales_manager` = #{request.salesManager}
+                        </if>
+                                                                                                            <if test="request.valveDetail != null  and request.valveDetail != ''">and
+                            `valve_detail` = #{request.valveDetail}
+                        </if>
+                                                                                                            <if test="request.specificationDetail != null  and request.specificationDetail != ''">and
+                            `specification_detail` = #{request.specificationDetail}
+                        </if>
+                                                                                                            <if test="request.otherFile != null  and request.otherFile != ''">and
+                            `other_file` = #{request.otherFile}
+                        </if>
+                                                                                                            <if test="request.torqueThrust != null  and request.torqueThrust != ''">and
+                            `torque_thrust` = #{request.torqueThrust}
+                        </if>
+                                                                                                            <if test="request.otherTechnicalRequirements != null  and request.otherTechnicalRequirements != ''">and
+                            `other_technical_requirements` = #{request.otherTechnicalRequirements}
+                        </if>
+                                                                                                            <if test="request.mechanismForm != null  and request.mechanismForm != ''">and
+                            `mechanism_form` = #{request.mechanismForm}
+                        </if>
+                                                                                                            <if test="request.typeSelection != null  and request.typeSelection != ''">and
+                            `type_selection` = #{request.typeSelection}
+                        </if>
+                                                                                                            <if test="request.currency != null  and request.currency != ''">and
+                            `currency` = #{request.currency}
+                        </if>
+                                                                                                            <if test="request.quotationBegin != null  and request.quotationBegin != ''">and
+                            `quotation_begin` = #{request.quotationBegin}
+                        </if>
+                                                                                                            <if test="request.quotationEnd != null  and request.quotationEnd != ''">and
+                            `quotation_end` = #{request.quotationEnd}
+                        </if>
+                                                                                                            <if test="request.qualityTime != null  and request.qualityTime != ''">and
+                            `quality_time` = #{request.qualityTime}
+                        </if>
+                                                                                                            <if test="request.exportItem != null  and request.exportItem != ''">and
+                            `export_item` = #{request.exportItem}
+                        </if>
+                                                                                                            <if test="request.modeTrade != null  and request.modeTrade != ''">and
+                            `mode_trade` = #{request.modeTrade}
+                        </if>
+                                                                                                            <if test="request.relationReview != null  and request.relationReview != ''">and
+                            `relation_review` = #{request.relationReview}
+                        </if>
+                                                                                                            <if test="request.relationSale != null  and request.relationSale != ''">and
+                            `relation_sale` = #{request.relationSale}
+                        </if>
+                                                                                                            <if test="request.payType != null  and request.payType != ''">and
+                            `pay_type` = #{request.payType}
+                        </if>
+                                                                                                            <if test="request.deleted != null ">and
+                            `deleted` = #{request.deleted}
+                        </if>
+                                                                                                                                                                                                    </where>
+                 order by   create_time desc
+            </select>
+
+    <select id="selectProjectSaleProcessById" parameterType="Long"
+            resultMap="ProjectSaleProcessResult">
+                    <include refid="selectProjectSaleProcessVo"/>
+            where `id` = #{id}
+            </select>
+
+    <insert id="insertProjectSaleProcess" parameterType="ProjectSaleProcess" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into `project_sale_process`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                                                                            <if test="name != null">`name`,
+                    </if>
+                                                                <if test="phone != null">`phone`,
+                    </if>
+                                                                <if test="type != null">`type`,
+                    </if>
+                                                                <if test="desc != null">`desc`,
+                    </if>
+                                                                <if test="company != null">`company`,
+                    </if>
+                                                                <if test="status != null">`status`,
+                    </if>
+                                                                <if test="img != null">`img`,
+                    </if>
+                                                                <if test="salesManager != null">`sales_manager`,
+                    </if>
+                                                                <if test="valveDetail != null">`valve_detail`,
+                    </if>
+                                                                <if test="specificationDetail != null">`specification_detail`,
+                    </if>
+                                                                <if test="otherFile != null">`other_file`,
+                    </if>
+                                                                <if test="torqueThrust != null">`torque_thrust`,
+                    </if>
+                                                                <if test="otherTechnicalRequirements != null">`other_technical_requirements`,
+                    </if>
+                                                                <if test="mechanismForm != null">`mechanism_form`,
+                    </if>
+                                                                <if test="typeSelection != null">`type_selection`,
+                    </if>
+                                                                <if test="currency != null">`currency`,
+                    </if>
+                                                                <if test="quotationBegin != null">`quotation_begin`,
+                    </if>
+                                                                <if test="quotationEnd != null">`quotation_end`,
+                    </if>
+                                                                <if test="qualityTime != null">`quality_time`,
+                    </if>
+                                                                <if test="exportItem != null">`export_item`,
+                    </if>
+                                                                <if test="modeTrade != null">`mode_trade`,
+                    </if>
+                                                                <if test="relationReview != null">`relation_review`,
+                    </if>
+                                                                <if test="relationSale != null">`relation_sale`,
+                    </if>
+                                                                <if test="payType != null">`pay_type`,
+                    </if>
+                                                                <if test="deleted != null">`deleted`,
+                    </if>
+                                                                <if test="createBy != null">`create_by`,
+                    </if>
+                                                                <if test="updateBy != null">`update_by`,
+                    </if>
+                                                                <if test="createTime != null">`create_time`,
+                    </if>
+                                                                <if test="updateTime != null">`update_time`,
+                    </if>
+                                                                <if test="remark != null">`remark`,
+                    </if>
+                                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                                                                            <if test="name != null">#{name},
+                    </if>
+                                                                <if test="phone != null">#{phone},
+                    </if>
+                                                                <if test="type != null">#{type},
+                    </if>
+                                                                <if test="desc != null">#{desc},
+                    </if>
+                                                                <if test="company != null">#{company},
+                    </if>
+                                                                <if test="status != null">#{status},
+                    </if>
+                                                                <if test="img != null">#{img},
+                    </if>
+                                                                <if test="salesManager != null">#{salesManager},
+                    </if>
+                                                                <if test="valveDetail != null">#{valveDetail},
+                    </if>
+                                                                <if test="specificationDetail != null">#{specificationDetail},
+                    </if>
+                                                                <if test="otherFile != null">#{otherFile},
+                    </if>
+                                                                <if test="torqueThrust != null">#{torqueThrust},
+                    </if>
+                                                                <if test="otherTechnicalRequirements != null">#{otherTechnicalRequirements},
+                    </if>
+                                                                <if test="mechanismForm != null">#{mechanismForm},
+                    </if>
+                                                                <if test="typeSelection != null">#{typeSelection},
+                    </if>
+                                                                <if test="currency != null">#{currency},
+                    </if>
+                                                                <if test="quotationBegin != null">#{quotationBegin},
+                    </if>
+                                                                <if test="quotationEnd != null">#{quotationEnd},
+                    </if>
+                                                                <if test="qualityTime != null">#{qualityTime},
+                    </if>
+                                                                <if test="exportItem != null">#{exportItem},
+                    </if>
+                                                                <if test="modeTrade != null">#{modeTrade},
+                    </if>
+                                                                <if test="relationReview != null">#{relationReview},
+                    </if>
+                                                                <if test="relationSale != null">#{relationSale},
+                    </if>
+                                                                <if test="payType != null">#{payType},
+                    </if>
+                                                                <if test="deleted != null">#{deleted},
+                    </if>
+                                                                <if test="createBy != null">#{createBy},
+                    </if>
+                                                                <if test="updateBy != null">#{updateBy},
+                    </if>
+                                                                <if test="createTime != null">#{createTime},
+                    </if>
+                                                                <if test="updateTime != null">#{updateTime},
+                    </if>
+                                                                <if test="remark != null">#{remark},
+                    </if>
+                                    </trim>
+    </insert>
+
+    <update id="updateProjectSaleProcess" parameterType="ProjectSaleProcess">
+        update `project_sale_process`
+        <trim prefix="SET" suffixOverrides=",">
+                                                                            <if test="name != null">`name` =
+                        #{name},
+                    </if>
+                                                                <if test="phone != null">`phone` =
+                        #{phone},
+                    </if>
+                                                                <if test="type != null">`type` =
+                        #{type},
+                    </if>
+                                                                <if test="desc != null">`desc` =
+                        #{desc},
+                    </if>
+                                                                <if test="company != null">`company` =
+                        #{company},
+                    </if>
+                                                                <if test="status != null">`status` =
+                        #{status},
+                    </if>
+                                                                <if test="img != null">`img` =
+                        #{img},
+                    </if>
+                                                                <if test="salesManager != null">`sales_manager` =
+                        #{salesManager},
+                    </if>
+                                                                <if test="valveDetail != null">`valve_detail` =
+                        #{valveDetail},
+                    </if>
+                                                                <if test="specificationDetail != null">`specification_detail` =
+                        #{specificationDetail},
+                    </if>
+                                                                <if test="otherFile != null">`other_file` =
+                        #{otherFile},
+                    </if>
+                                                                <if test="torqueThrust != null">`torque_thrust` =
+                        #{torqueThrust},
+                    </if>
+                                                                <if test="otherTechnicalRequirements != null">`other_technical_requirements` =
+                        #{otherTechnicalRequirements},
+                    </if>
+                                                                <if test="mechanismForm != null">`mechanism_form` =
+                        #{mechanismForm},
+                    </if>
+                                                                <if test="typeSelection != null">`type_selection` =
+                        #{typeSelection},
+                    </if>
+                                                                <if test="currency != null">`currency` =
+                        #{currency},
+                    </if>
+                                                                <if test="quotationBegin != null">`quotation_begin` =
+                        #{quotationBegin},
+                    </if>
+                                                                <if test="quotationEnd != null">`quotation_end` =
+                        #{quotationEnd},
+                    </if>
+                                                                <if test="qualityTime != null">`quality_time` =
+                        #{qualityTime},
+                    </if>
+                                                                <if test="exportItem != null">`export_item` =
+                        #{exportItem},
+                    </if>
+                                                                <if test="modeTrade != null">`mode_trade` =
+                        #{modeTrade},
+                    </if>
+                                                                <if test="relationReview != null">`relation_review` =
+                        #{relationReview},
+                    </if>
+                                                                <if test="relationSale != null">`relation_sale` =
+                        #{relationSale},
+                    </if>
+                                                                <if test="payType != null">`pay_type` =
+                        #{payType},
+                    </if>
+                                                                <if test="deleted != null">`deleted` =
+                        #{deleted},
+                    </if>
+                                                                <if test="createBy != null">`create_by` =
+                        #{createBy},
+                    </if>
+                                                                <if test="updateBy != null">`update_by` =
+                        #{updateBy},
+                    </if>
+                                                                <if test="createTime != null">`create_time` =
+                        #{createTime},
+                    </if>
+                                                                <if test="updateTime != null">`update_time` =
+                        #{updateTime},
+                    </if>
+                                                                <if test="remark != null">`remark` =
+                        #{remark},
+                    </if>
+                                    </trim>
+        where `id` = #{id}
+    </update>
+
+    <delete id="deleteProjectSaleProcessById" parameterType="Long">
+        delete
+        from `project_sale_process`
+        where `id` = #{id}
+    </delete>
+
+    <delete id="deleteProjectSaleProcessByIds" parameterType="String">
+        delete from `project_sale_process` where `id` in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

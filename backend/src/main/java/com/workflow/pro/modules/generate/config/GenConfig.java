@@ -19,7 +19,7 @@ public class GenConfig {
     /**
      * 生成包路径
      **/
-    public static String packageName = "com.workflow.pro.modules.apitable";
+    public static String packageName = "com.workflow.pro.modules.ailuo";
 
     /**
      * 自动去除表前缀，默认是false
