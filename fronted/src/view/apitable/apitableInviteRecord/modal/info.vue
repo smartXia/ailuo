@@ -59,7 +59,7 @@
      </a-form-item>
 
 
-                                                                                          <a-form-item label="$column.columnComment" name="deleted">
+                                                                                          <a-form-item label="id" name="deleted">
             <a-input v-model:value="formState.deleted" />
      </a-form-item>
 
@@ -87,31 +87,31 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({});
 
     watch(props, (props) => {
-                        
+
             formState.id = props.record.id
-                                                                            
+
             formState.spaceId = props.record.spaceId
-                                                                            
+
             formState.dstId = props.record.dstId
-                                                                            
+
             formState.inviter = props.record.inviter
-                                                                            
+
             formState.accepter = props.record.accepter
-                                                                            
+
             formState.type = props.record.type
-                                                                            
+
             formState.content = props.record.content
-                                                                            
+
             formState.sort = props.record.sort
-                                                                            
+
             formState.ignoreMsg = props.record.ignoreMsg
-                                                                                                                
+
             formState.deleted = props.record.deleted
-                                                                                                    
+
             formState.tenantId = props.record.tenantId
                 })
 
@@ -134,7 +134,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

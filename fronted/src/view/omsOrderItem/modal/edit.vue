@@ -23,19 +23,19 @@
                                                                                                            <a-form-item label="订单编号" name="orderSn">
              <a-input v-model:value ="formState.orderSn" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="productId">
+                                                                                                           <a-form-item label="id" name="productId">
              <a-input v-model:value ="formState.productId" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="productPic">
+                                                                                                           <a-form-item label="id" name="productPic">
              <a-input v-model:value ="formState.productPic" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="productName">
+                                                                                                           <a-form-item label="id" name="productName">
              <a-input v-model:value ="formState.productName" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="productBrand">
+                                                                                                           <a-form-item label="id" name="productBrand">
              <a-input v-model:value ="formState.productBrand" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="productSn">
+                                                                                                           <a-form-item label="id" name="productSn">
              <a-input v-model:value ="formState.productSn" />
           </a-form-item>
                                                                                                            <a-form-item label="销售价格" name="productPrice">
@@ -68,10 +68,10 @@
                                                                                                            <a-form-item label="该商品经过优惠后的分解金额" name="realAmount">
              <a-input v-model:value ="formState.realAmount" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="giftIntegration">
+                                                                                                           <a-form-item label="id" name="giftIntegration">
              <a-input v-model:value ="formState.giftIntegration" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="giftGrowth">
+                                                                                                           <a-form-item label="id" name="giftGrowth">
              <a-input v-model:value ="formState.giftGrowth" />
           </a-form-item>
                                                                                                            <a-form-item label="商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]" name="productAttr">
@@ -83,7 +83,7 @@
                                                                                                                                                                        <a-form-item label="租户编号" name="tenantId">
              <a-input v-model:value ="formState.tenantId" />
           </a-form-item>
-                       
+
     </a-form>
   </a-modal>
 </template>
@@ -104,7 +104,7 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({});
 
     watch(props, (props) => {
@@ -174,7 +174,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

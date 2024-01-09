@@ -14,7 +14,7 @@
       :label-col="labelCol"
       :wrapper-col="wrapperCol"
     >
-                                            <a-form-item label="$column.columnComment" name="id">
+                                            <a-form-item label="id" name="id">
              <a-input v-model:value ="formState.id" />
           </a-form-item>
                                                                                                            <a-form-item label="邮箱" name="email">
@@ -44,7 +44,7 @@
                                                                                                                                                                        <a-form-item label="租户编号" name="tenantId">
              <a-input v-model:value ="formState.tenantId" />
           </a-form-item>
-                       
+
     </a-form>
   </a-modal>
 </template>
@@ -65,7 +65,7 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({});
 
     watch(props, (props) => {
@@ -122,7 +122,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

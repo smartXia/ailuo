@@ -41,13 +41,13 @@
                                                                                                            <a-form-item label="忽略消息" name="ignoreMsg">
              <a-input v-model:value ="formState.ignoreMsg" />
           </a-form-item>
-                                                                                                                                               <a-form-item label="$column.columnComment" name="deleted">
+                                                                                                                                               <a-form-item label="id" name="deleted">
              <a-input v-model:value ="formState.deleted" />
           </a-form-item>
                                                                                                                                    <a-form-item label="租户编号" name="tenantId">
              <a-input v-model:value ="formState.tenantId" />
           </a-form-item>
-                       
+
     </a-form>
   </a-modal>
 </template>
@@ -68,7 +68,7 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({});
 
     watch(props, (props) => {
@@ -126,7 +126,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

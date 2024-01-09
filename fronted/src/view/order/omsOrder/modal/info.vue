@@ -19,12 +19,12 @@
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="memberId">
+                                                                  <a-form-item label="id" name="memberId">
             <a-input v-model:value="formState.memberId" />
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="couponId">
+                                                                  <a-form-item label="id" name="couponId">
             <a-input v-model:value="formState.couponId" />
      </a-form-item>
 
@@ -257,99 +257,99 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({});
 
     watch(props, (props) => {
-                        
+
             formState.id = props.record.id
-                                                                            
+
             formState.memberId = props.record.memberId
-                                                                            
+
             formState.couponId = props.record.couponId
-                                                                            
+
             formState.orderSn = props.record.orderSn
-                                                                                        
+
             formState.memberUsername = props.record.memberUsername
-                                                                            
+
             formState.totalAmount = props.record.totalAmount
-                                                                            
+
             formState.payAmount = props.record.payAmount
-                                                                            
+
             formState.freightAmount = props.record.freightAmount
-                                                                            
+
             formState.promotionAmount = props.record.promotionAmount
-                                                                            
+
             formState.integrationAmount = props.record.integrationAmount
-                                                                            
+
             formState.couponAmount = props.record.couponAmount
-                                                                            
+
             formState.discountAmount = props.record.discountAmount
-                                                                            
+
             formState.payType = props.record.payType
-                                                                            
+
             formState.sourceType = props.record.sourceType
-                                                                            
+
             formState.status = props.record.status
-                                                                            
+
             formState.orderType = props.record.orderType
-                                                                            
+
             formState.deliveryCompany = props.record.deliveryCompany
-                                                                            
+
             formState.deliverySn = props.record.deliverySn
-                                                                            
+
             formState.autoConfirmDay = props.record.autoConfirmDay
-                                                                            
+
             formState.integration = props.record.integration
-                                                                            
+
             formState.growth = props.record.growth
-                                                                            
+
             formState.promotionInfo = props.record.promotionInfo
-                                                                            
+
             formState.billType = props.record.billType
-                                                                            
+
             formState.billHeader = props.record.billHeader
-                                                                            
+
             formState.billContent = props.record.billContent
-                                                                            
+
             formState.billReceiverPhone = props.record.billReceiverPhone
-                                                                            
+
             formState.billReceiverEmail = props.record.billReceiverEmail
-                                                                            
+
             formState.receiverName = props.record.receiverName
-                                                                            
+
             formState.receiverPhone = props.record.receiverPhone
-                                                                            
+
             formState.receiverPostCode = props.record.receiverPostCode
-                                                                            
+
             formState.receiverProvince = props.record.receiverProvince
-                                                                            
+
             formState.receiverCity = props.record.receiverCity
-                                                                            
+
             formState.receiverRegion = props.record.receiverRegion
-                                                                            
+
             formState.receiverDetailAddress = props.record.receiverDetailAddress
-                                                                            
+
             formState.note = props.record.note
-                                                                            
+
             formState.confirmStatus = props.record.confirmStatus
-                                                                            
+
             formState.deleteStatus = props.record.deleteStatus
-                                                                            
+
             formState.useIntegration = props.record.useIntegration
-                                                                            
+
             formState.paymentTime = props.record.paymentTime
-                                                                            
+
             formState.deliveryTime = props.record.deliveryTime
-                                                                            
+
             formState.receiveTime = props.record.receiveTime
-                                                                            
+
             formState.commentTime = props.record.commentTime
-                                                                            
+
             formState.modifyTime = props.record.modifyTime
-                                                                            
+
             formState.deleted = props.record.deleted
-                                                                                                                            
+
             formState.tenantId = props.record.tenantId
                 })
 
@@ -372,7 +372,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

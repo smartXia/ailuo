@@ -14,7 +14,7 @@
       :label-col="labelCol"
       :wrapper-col="wrapperCol"
     >
-                      <a-form-item label="$column.columnComment" name="id">
+                      <a-form-item label="id" name="id">
             <a-input v-model:value="formState.id" />
      </a-form-item>
 
@@ -82,29 +82,29 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({});
 
     watch(props, (props) => {
-                        
+
             formState.id = props.record.id
-                                                                            
+
             formState.email = props.record.email
-                                                                            
+
             formState.phone = props.record.phone
-                                                                            
+
             formState.captcha = props.record.captcha
-                                                                            
+
             formState.type = props.record.type
-                                                                            
+
             formState.validated = props.record.validated
-                                                                            
+
             formState.expired = props.record.expired
-                                                                            
+
             formState.deleted = props.record.deleted
-                                                                            
+
             formState.sort = props.record.sort
-                                                                                                                                        
+
             formState.tenantId = props.record.tenantId
                 })
 
@@ -127,7 +127,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

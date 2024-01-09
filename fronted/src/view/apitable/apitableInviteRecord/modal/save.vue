@@ -16,73 +16,73 @@
     >
 
 
-                        
-                          
+
+
           <a-form-item label="Primary Key" name="id">
                   <a-input v-model:value = "formState.id" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="空间id" name="spaceId">
                   <a-input v-model:value = "formState.spaceId" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="表格id" name="dstId">
                   <a-input v-model:value = "formState.dstId" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="邀请id" name="inviter">
                   <a-input v-model:value = "formState.inviter" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="成员id" name="accepter">
                   <a-input v-model:value = "formState.accepter" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="0: 邀请; 1: 文件导出; 2: 邀请链接" name="type">
                   <a-input v-model:value = "formState.type" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="内容" name="content">
                   <a-input v-model:value = "formState.content" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="排序" name="sort">
                   <a-input v-model:value = "formState.sort" />
            </a-form-item>
 
-                                                                            
-                          
+
+
           <a-form-item label="忽略消息" name="ignoreMsg">
                   <a-input v-model:value = "formState.ignoreMsg" />
            </a-form-item>
 
-                                                                                                                
-                          
-          <a-form-item label="$column.columnComment" name="deleted">
+
+
+          <a-form-item label="id" name="deleted">
                   <a-input v-model:value = "formState.deleted" />
            </a-form-item>
 
-                                                                                                    
-                          
+
+
           <a-form-item label="租户编号" name="tenantId">
                   <a-input v-model:value = "formState.tenantId" />
            </a-form-item>
 
-            
+
 
 
     </a-form>
@@ -102,7 +102,7 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({
     //  sort: 0,
     //   enable: 1,
@@ -148,7 +148,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

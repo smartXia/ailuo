@@ -29,27 +29,27 @@
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="productId">
+                                                                  <a-form-item label="id" name="productId">
             <a-input v-model:value="formState.productId" />
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="productPic">
+                                                                  <a-form-item label="id" name="productPic">
             <a-input v-model:value="formState.productPic" />
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="productName">
+                                                                  <a-form-item label="id" name="productName">
             <a-input v-model:value="formState.productName" />
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="productBrand">
+                                                                  <a-form-item label="id" name="productBrand">
             <a-input v-model:value="formState.productBrand" />
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="productSn">
+                                                                  <a-form-item label="id" name="productSn">
             <a-input v-model:value="formState.productSn" />
      </a-form-item>
 
@@ -104,12 +104,12 @@
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="giftIntegration">
+                                                                  <a-form-item label="id" name="giftIntegration">
             <a-input v-model:value="formState.giftIntegration" />
      </a-form-item>
 
 
-                                                                  <a-form-item label="$column.columnComment" name="giftGrowth">
+                                                                  <a-form-item label="id" name="giftGrowth">
             <a-input v-model:value="formState.giftGrowth" />
      </a-form-item>
 
@@ -147,55 +147,55 @@ export default defineComponent({
   setup(props, context) {
 
     const formRef = ref();
-    
+
     const formState = reactive({});
 
     watch(props, (props) => {
-                        
+
             formState.id = props.record.id
-                                                                            
+
             formState.orderId = props.record.orderId
-                                                                            
+
             formState.orderSn = props.record.orderSn
-                                                                            
+
             formState.productId = props.record.productId
-                                                                            
+
             formState.productPic = props.record.productPic
-                                                                            
+
             formState.productName = props.record.productName
-                                                                            
+
             formState.productBrand = props.record.productBrand
-                                                                            
+
             formState.productSn = props.record.productSn
-                                                                            
+
             formState.productPrice = props.record.productPrice
-                                                                            
+
             formState.productQuantity = props.record.productQuantity
-                                                                            
+
             formState.productSkuId = props.record.productSkuId
-                                                                            
+
             formState.productSkuCode = props.record.productSkuCode
-                                                                            
+
             formState.productCategoryId = props.record.productCategoryId
-                                                                            
+
             formState.promotionName = props.record.promotionName
-                                                                            
+
             formState.promotionAmount = props.record.promotionAmount
-                                                                            
+
             formState.couponAmount = props.record.couponAmount
-                                                                            
+
             formState.integrationAmount = props.record.integrationAmount
-                                                                            
+
             formState.realAmount = props.record.realAmount
-                                                                            
+
             formState.giftIntegration = props.record.giftIntegration
-                                                                            
+
             formState.giftGrowth = props.record.giftGrowth
-                                                                            
+
             formState.productAttr = props.record.productAttr
-                                                                            
+
             formState.deleted = props.record.deleted
-                                                                                                                                        
+
             formState.tenantId = props.record.tenantId
                 })
 
@@ -218,7 +218,7 @@ export default defineComponent({
       formRef,
       formState,
       formRules,
-      
+
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
     };

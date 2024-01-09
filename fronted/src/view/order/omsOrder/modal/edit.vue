@@ -17,10 +17,10 @@
                                             <a-form-item label="订单id" name="id">
              <a-input v-model:value ="formState.id" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="memberId">
+                                                                                                           <a-form-item label="id" name="memberId">
              <a-input v-model:value ="formState.memberId" />
           </a-form-item>
-                                                                                                           <a-form-item label="$column.columnComment" name="couponId">
+                                                                                                           <a-form-item label="id" name="couponId">
              <a-input v-model:value ="formState.couponId" />
           </a-form-item>
                                                                                                            <a-form-item label="订单编号" name="orderSn">

@@ -62,51 +62,51 @@ export default {
 
     /// 列配置
     const columns = [
-                              
+
                     { dataIndex: "id", key: "id", title: "订单id" },
-                                                                                            
+
                     { dataIndex: "orderId", key: "orderId", title: "订单id" },
-                                                                                            
+
                     { dataIndex: "orderSn", key: "orderSn", title: "订单编号" },
-                                                                                            
-                    { dataIndex: "productId", key: "productId", title: "$column.columnComment" },
-                                                                                            
-                    { dataIndex: "productPic", key: "productPic", title: "$column.columnComment" },
-                                                                                            
-                    { dataIndex: "productName", key: "productName", title: "$column.columnComment" },
-                                                                                            
-                    { dataIndex: "productBrand", key: "productBrand", title: "$column.columnComment" },
-                                                                                            
-                    { dataIndex: "productSn", key: "productSn", title: "$column.columnComment" },
-                                                                                            
+
+                    { dataIndex: "productId", key: "productId", title: "id" },
+
+                    { dataIndex: "productPic", key: "productPic", title: "id" },
+
+                    { dataIndex: "productName", key: "productName", title: "id" },
+
+                    { dataIndex: "productBrand", key: "productBrand", title: "id" },
+
+                    { dataIndex: "productSn", key: "productSn", title: "id" },
+
                     { dataIndex: "productPrice", key: "productPrice", title: "销售价格" },
-                                                                                            
+
                     { dataIndex: "productQuantity", key: "productQuantity", title: "购买数量" },
-                                                                                            
+
                     { dataIndex: "productSkuId", key: "productSkuId", title: "商品sku编号" },
-                                                                                            
+
                     { dataIndex: "productSkuCode", key: "productSkuCode", title: "商品sku条码" },
-                                                                                            
+
                     { dataIndex: "productCategoryId", key: "productCategoryId", title: "商品分类id" },
-                                                                                            
+
                     { dataIndex: "promotionName", key: "promotionName", title: "商品促销名称" },
-                                                                                            
+
                     { dataIndex: "promotionAmount", key: "promotionAmount", title: "商品促销分解金额" },
-                                                                                            
+
                     { dataIndex: "couponAmount", key: "couponAmount", title: "优惠券优惠分解金额" },
-                                                                                            
+
                     { dataIndex: "integrationAmount", key: "integrationAmount", title: "积分优惠分解金额" },
-                                                                                            
+
                     { dataIndex: "realAmount", key: "realAmount", title: "该商品经过优惠后的分解金额" },
-                                                                                            
-                    { dataIndex: "giftIntegration", key: "giftIntegration", title: "$column.columnComment" },
-                                                                                            
-                    { dataIndex: "giftGrowth", key: "giftGrowth", title: "$column.columnComment" },
-                                                                                            
+
+                    { dataIndex: "giftIntegration", key: "giftIntegration", title: "id" },
+
+                    { dataIndex: "giftGrowth", key: "giftGrowth", title: "id" },
+
                     { dataIndex: "productAttr", key: "productAttr", title: "商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]" },
-                                                                                            
+
                     { dataIndex: "deleted", key: "deleted", title: "删除表示(0:No,1:Yes)" },
-                                                                                                                                                                            
+
                     { dataIndex: "tenantId", key: "tenantId", title: "租户编号" },
                       ];
 
